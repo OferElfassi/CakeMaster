@@ -1,0 +1,53 @@
+
+#cake-maker-page ul.progressbar {
+  height: 75px;
+  width: 900px;
+  padding: 0;
+  counter-reset: step;
+}
+#cake-maker-page ul.progressbar li {
+  list-style-type: none;
+  color: rgb(165,165,165);
+  float: left;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+}
+#cake-maker-page ul.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  color: #333;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  background: rgb(216,216,216);
+}
+#cake-maker-page ul.progressbar li:after {
+  content: "";
+  background: #ddd;
+  position: absolute;
+  width: 100%;
+  height: 14px;
+  top: 14px;
+  right: -50%;
+  z-index: -1;
+}
+#cake-maker-page ul.progressbar li:last-child:after {
+  content: none;
+}
+#cake-maker-page ul.progressbar li.done:before, ul.progressbar li.done:after {
+  background: rgb(255, 207, 214);
+  color: #fff;
+
+}
+#cake-maker-page ul.progressbar li.current:before {
+  background: rgb(134, 231, 255);
+  color: #fff;
+}
+#cake-maker-page ul.progressbar li.fail:before {
+  background: rgb(229, 48, 40)
+}

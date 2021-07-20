@@ -1,0 +1,2045 @@
+
+/*
+*
+* **********************************************___Global page template style___**********************************************
+*
+*/
+@font-face {
+    font-family: 'mainFont';
+    src: url('../assets/Quicksand-Light.ttf');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header, nav, footer, section, article, main {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'mainFont', Calibri, sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid #F2DEDE;
+    display: flex;
+    align-items: center;
+}
+footer{
+    position: relative;
+}
+footer a{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+footer a:hover{
+    font-weight: bold;
+}
+#hamburger {
+    position: relative;
+    left: 5px;
+    top: 0;
+    display: none;
+}
+
+#logo {
+    margin-left: 120px;
+    background-image: url("../images/logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    background-position: 30px -5px;
+
+}
+
+#logo h1 {
+    color: black;
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+nav {
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    width: 700px;
+    height: 100%;
+}
+
+nav ul {
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: auto;
+    position: relative;
+    bottom: -2px;
+}
+
+nav ul li {
+    padding-bottom: 22px;
+
+}
+
+nav ul li.selected {
+    border-bottom: 3px solid black;
+}
+
+#search {
+    height: 25px;
+    margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: 22px;
+}
+
+
+#search input {
+    display: inline-block;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none;
+    border-style: solid;
+
+    border-color: #F2DEDE;
+    background-color: white;
+    border-radius: 8px;
+    border-width: 1px;
+    height: 25px;
+    width: 150px;
+
+}
+
+#search input:focus {
+    border-color: #eeaeae;
+    background-color: #fffdfd;
+    padding-left: 5px;
+    font-family: 'mainFont', Calibri, sans-serif;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: none;
+    border-style: solid;
+    outline: 0;
+}
+
+#search input:focus ~ i {
+    color: black;
+    cursor: pointer;
+}
+
+#search i {
+    position: absolute;
+    right: 28px;
+    top: 58px;
+    color: #999999;
+
+}
+/*user status*/
+#login-page-btn{
+    user-select: none;
+}
+#login-page-btn:hover{
+    cursor: pointer;
+    color: #6c9a42;
+}
+.user-status {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 5px;
+    border: 2px solid #F2DEDE;
+    border-radius: 5px;
+    border-top: none;
+    position: absolute;
+    right: 20px;
+    top: 102px
+}
+.user-status h4{
+    line-height: 28px;
+}
+.avatar-initials{
+    width: 30px;
+    height: 30px;
+    color: #FFF;
+    font: 15px Arial;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+}
+.user-status .fa-user {
+
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.user-status #update-profile-btn {
+
+    margin-right: 15px;
+    margin-left: 5px;
+}
+i.fa-sign-out-alt{
+    font-size: 20px;
+    line-height: 25px;
+}
+.user-status i.fa-sign-out-alt {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.user-status i:hover,
+#update-profile-btn:hover{
+    cursor: pointer;
+}
+
+.user-status i:hover .sign-out-tooltip-text {
+    visibility: visible;
+}
+
+.user-status #update-profile-btn:hover ~ .update-profile-tooltip-text {
+    visibility: visible;
+}
+
+.sign-out-tooltip-text,
+.update-profile-tooltip-text{
+    font-family: 'mainFont', Calibri, sans-serif;
+    visibility: hidden;
+    width: 120px;
+    background-color: #F2DEDE;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    top: 15px;
+    right: 105%;
+    position: absolute;
+    z-index: 1;
+    font-weight: bold;
+}
+
+
+/*modal*/
+#modal-overlay{
+    display: block;
+    position: fixed;
+    background-color: rgba(158, 157, 157, 0.5);
+    z-index: 2;
+    top:0 ;
+    bottom:0 ;
+    left:0 ;
+    right:0 ;
+}
+.fa-window-close:hover{
+    cursor: pointer;
+}
+.modal{
+    position: fixed;
+    background-color: #ffffff;
+    border: 2px solid #F2DEDE;
+    border-top: none;
+    left:15% ;
+    right:15% ;
+    /*width: 70%;*/
+    z-index: 5;
+}
+
+
+#message-modal{
+    left:30% ;
+    right:30% ;
+    width: auto;
+    z-index: 6;
+}
+#message-modal .modal-body{
+    font-weight: bold;
+
+}
+#message-modal ,#modal-ok,#modal-cancel{
+    display: none;
+}
+
+.modal-success{
+    border: 3px solid #00bb0e;
+    color: #00bb0e;
+}
+.modal-warning{
+    border: 3px solid #ff9109;
+    color: #ff9109;
+}
+.modal-alert{
+    border: 3px solid #ef5252;
+    color: #ef5252;
+}
+.modal .modal-header{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    background-color: #F2DEDE;
+
+    border-bottom: 1px solid #F2DEDE
+}
+
+.modal-btn-container{
+    display: flex;
+    justify-content: space-around;
+}
+.modal .modal-body{
+    padding: 10px;
+    color: #000000;
+
+}
+.modal .modal-header i{
+    font-size: 20px;
+    color: #ee5252;
+    position: absolute;
+    right: 3px;
+    top:8px;
+}
+.btn{
+    border: 1px solid #F2DEDE;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+.btn-success{
+    color: #40a340;
+}
+.btn-alert{
+    color: #ea4646;
+}
+
+.modal-btn{
+    width: 30%;
+    margin: 15px auto;
+}
+.btn:hover{
+    cursor: pointer;
+    border: 1px solid #f3bcbc;
+}
+.btn-success:hover{
+
+    color: #297429;
+}
+.btn-alert:hover{
+    color: #de0000;
+}
+
+/*update profile info*/
+#update-profile-modal{
+    display: none;
+    position: absolute;
+}
+.update-profile form{
+    display: flex;
+    flex-direction: column;
+}
+#delete-account-btn{
+    margin: 8px;
+}
+.update-profile input[type=text],
+.update-profile input[type=password]{
+    border-top: none;
+    border-right: none;
+    border-left: navajowhite;
+    border-width: 1px;
+    margin-left: 10px;
+}
+
+.update-profile input[type=checkbox]{
+    margin-right: 10px;
+
+}
+#preferences-form label{
+    line-height: 8px;
+}
+#preferences-form div{
+    display: flex;
+    flex-direction: column;
+
+
+}
+#preferences-form .form-input{
+    flex-direction: row ;
+}
+
+.update-profile .form-input{
+    display: flex;
+
+    margin-top: 15px;
+}
+
+
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+.accordion i{
+    position: absolute;
+    right: 20px;
+}
+
+
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+
+.opened {
+    display: flex;
+}
+
+
+#hamburger {
+    width: 50px;
+    height: 25px;
+    /*z-index: 1;*/
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background: #000000;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#hamburger span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+#hamburger span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+}
+
+#hamburger span:nth-child(1), #hamburger span:nth-child(2) {
+    top: 0px;
+}
+
+#hamburger span:nth-child(3), #hamburger span:nth-child(4) {
+    top: 18px;
+}
+
+#hamburger span:nth-child(5), #hamburger span:nth-child(6) {
+    top: 36px;
+}
+
+#hamburger.open span:nth-child(1), #hamburger.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#hamburger.open span:nth-child(2), #hamburger.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#hamburger.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+}
+
+#hamburger.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+}
+
+#hamburger.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+#hamburger.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+#hamburger.open span:nth-child(5) {
+    left: 5px;
+    top: 29px;
+}
+
+#hamburger.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 29px;
+}
+/*loader*/
+#loader{
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    z-index: 10;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/*action*/
+#actions {
+    margin: 20px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.action-btn {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    border: 1px solid #f1c7c7;
+    width: 48%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.5);
+}
+.action-btn:hover{
+    border: 2px solid #f1c7c7;
+}
+.action-selected{
+    border-width: 2px;
+}
+#actions .action-btn:nth-child(1) {
+    background-size: cover;
+}
+
+#actions .action-btn:nth-child(2) {
+    background-size: cover;
+}
+
+.jq-star-svg {
+    height: 100%;
+    width: 100%;
+}
+
+.min-action-btns {
+    display: none;
+    z-index: 5;
+    width: 180px;
+    /*height: 140px;*/
+    /*background-color: rgba(170, 170, 170, 0.9);*/
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.7);
+    background: url('../images/cake-drawer.jpg');
+    /*opacity: 0.95;*/
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 100px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border: 2px solid #939393;
+    border-top: none;
+}
+
+
+
+
+.min-action-btns  div {
+    height: 45px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.min-action-btns  div:hover {
+    font-size: 17px;
+    cursor: pointer;
+}
+.min-action-btns #btn2 {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.min-action-btns #btn2, .min-action-btns #btn1 {
+    display: none;
+    /*height: 45px*/
+}
+
+
+@media screen and (max-width: 650px) {
+    .min-action-btns {
+        display: block;
+    }
+
+    #actions {
+        display: none
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    #logo {
+        margin-left: 50px;
+        background-position: 28px -5px;
+    }
+
+    #logo h1 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #logo {
+        margin-left: 50px;
+        background-position: 18px -5px;
+    }
+
+    #logo h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        width: 550px;
+    }
+
+    nav ul {
+        font-size: 17px;
+    }
+
+    #search input {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+
+    header {
+        justify-content: center;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        /*display: flex;*/
+        z-index: 10;
+        flex-direction: column;
+        justify-content: flex-start;
+        color: rgba(250, 250, 250, 0.5);
+        width: 200px;
+        left: 0;
+        top: 102px;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-bottom: auto;
+        background-color: rgba(250, 250, 250, 0.8);
+
+    }
+
+    nav ul li a {
+        padding-bottom: 5px;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+    }
+
+    nav ul li:hover {
+        background-color: #f3e3e3;
+        border-right: 2px solid #F2DEDE;
+        background-size: 100%;
+    }
+
+    nav ul li.selected {
+        border-bottom: none;
+        border-right: 3px solid #F2DEDE;
+    }
+
+    .selected a {
+        /*border-bottom: 3px solid black;*/
+    }
+
+    nav {
+        width: 0;
+    }
+
+    #logo {
+
+        position: absolute;
+
+        background-position: 27px -5px;
+
+    }
+
+    #logo h1 {
+        color: black;
+        font-size: 45px;
+        font-weight: lighter;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    #search {
+        position: absolute;
+        right: 20px;
+        top: 102px
+    }
+
+
+    #search input {
+        border-top-color: transparent;
+        border-radius: 0 0 8px 8px;
+        width: 100px;
+
+    }
+
+    #search i {
+        right: 8px;
+        top: 5px;
+    }
+
+    #search i {
+        z-index: 3;
+    }
+
+    #search input:focus {
+        border-top-color: transparent;
+
+    }
+
+
+    .user-status {
+        border: 2px solid #F2DEDE;
+        position: absolute;
+        top: 50px
+    }
+
+
+}
+
+.search-open {
+    position: absolute;
+    right: 20px;
+    top: 102px
+}
+
+.search-open-icon {
+    right: 8px;
+    top: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    .user-status {
+        border: 2px solid #F2DEDE;
+        position: absolute;
+        top: 100px;
+        right: auto;
+        left: 10px;
+    }
+    .user-status i .update-profile-tooltip-text{
+        right: 10%;
+    }
+    .user-status i .sign-out-tooltip-text{
+        left: 100%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    #logo {
+        margin-left: 50px;
+        background-position: 18px -5px;
+    }
+
+    #logo h1 {
+        font-size: 30px;
+    }
+
+    #hamburger {
+        width: 40px;
+        height: 20px;
+    }
+
+    #search {
+        right: 5px;
+    }
+
+
+    #search input {
+        width: 100px;
+
+    }
+
+}
+
+@media screen and (max-width: 230px) {
+    #logo {
+        margin-left: 70px;
+        background-position: 18px -5px;
+        background-size: 30px;
+    }
+
+    #logo h1 {
+        font-size: 30px;
+    }
+}
+
+
+/*
+*
+* **********************************************___Home page style___**********************************************
+*
+*/
+
+
+
+/*action*/
+
+#home-page #actions .action-btn:nth-child(1){
+    background-image: url("../images/cake-drawer.jpg");
+
+
+}
+#home-page #actions .action-btn:nth-child(2){
+    background-image: url("../images/cake-factory.jpg");
+
+}
+
+
+
+/*objects view*/
+
+#object-gallery{
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.obj-container{
+    height: 265px;
+    width: 420px ;
+    margin-bottom: 60px;
+}
+
+.obj-card{
+    margin: 1px;
+}
+.front,.back{
+    padding: 1px;
+    height: 250px;
+}
+.front img,.back img{
+    object-fit: cover;
+    width: 420px ;
+    height: 250px;
+}
+
+
+.obj-info{
+    margin-left: 3px;
+}
+.back{
+    display: none;
+}
+
+.obj-info div{
+    display: flex;
+    justify-content: space-between;
+}
+.obj-info div div{
+    margin-bottom: 5px;
+}
+.obj-info i{
+    margin-right: 5px;
+}
+
+
+.obj-info span{
+    background-image: url("../images/photo-switch-logo.png");
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+
+}
+.front .badges{
+    position: relative;
+    display: flex;
+    bottom: 30px;
+    left: 10px;
+}
+.badges .badge{
+    margin-left: 5px;
+    border-radius: 5px;
+}
+.badge h4{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.flip{
+    cursor:pointer;
+}
+
+@media screen and (max-width: 950px) {
+    #home-page #wrapper{
+        width: 600px;
+    }
+
+.obj-container{
+        width: 600px ;
+        margin-bottom: 90px;
+    }
+
+.front img,.back img{
+        width: 600px ;
+    }
+}
+
+
+
+@media screen and (max-width: 650px) {
+    #home-page #wrapper{
+        width: 450px;
+    }
+
+.obj-container{
+        width: 450px ;
+        margin-bottom: 90px;
+    }
+
+.front img,.back img{
+        width: 450px ;
+    }
+}
+
+
+
+
+@media screen and (max-width: 520px) {
+    #home-page #wrapper{
+        width: 350px;
+    }
+
+.obj-container{
+        width: 350px ;
+        margin-bottom: 90px;
+    }
+
+.front img,.back img{
+        width: 350px ;
+    }
+}
+
+
+/*
+*
+* **********************************************___Cake page style___**********************************************
+*
+*/
+
+/*actions*/
+
+#cake-page #actions .action-btn:nth-child(1) {
+    background-image: url("../images/edit-cake.png");
+    background-color: #FDEFEF;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    background-position: 30px 2px;
+}
+
+#cake-page #actions .action-btn:nth-child(2) {
+    background-image: url("../images/baking-page.png");
+    background-position: 0 -10px;
+
+}
+ #delete-cake{
+    display: none;
+}
+#delete-cake:hover i{
+    font-weight: bold;
+}
+#recipe-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+
+}
+
+#recipe-info .content {
+    width: 653px;
+
+}
+
+/*recipe side*/
+
+ #recipe-info .side {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: 150px;
+    justify-content: space-between;
+    margin-top: 90px;
+}
+
+ #recipe-info .side > section {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#recipe-info .side > section > div {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 5px;
+    border: 3px solid #F2DEDE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#recipe-info .side p {
+    font-size: 30px;
+}
+
+
+/*recipe info*/
+
+
+#recipe-info .title {
+    width: 550px;
+    display: flex;
+    margin-top: 40px;
+}
+
+#recipe-info .content .user-name {
+    margin-top: 16px;
+    margin-left: 15px;
+}
+
+#title-image {
+    height: 158px;
+    width: 280px;
+    padding-right: 15px;
+}
+
+
+#cake-page .title h1 {
+    font-size: 38px;
+}
+
+#recipe-info .stars {
+    position: relative;
+    top: 165px;
+    right: 555px;
+    display: flex;
+}
+
+
+#recipe-info .details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe-info .details p {
+    font-size: 25px;
+}
+
+#recipe-info .content a {
+    margin: 50px auto;
+
+}
+
+#cake-page #main-image {
+    height: 365px;
+    width: 653px;
+}
+
+
+#recipe-info .recipe {
+    margin-top: 30px;
+    padding-left: 20px;
+    background-color: #fdf4f4;
+    padding-bottom: 20px;
+}
+
+#recipe-info .recipe h2 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+#recipe-info .recipe h3 {
+    width: 25%;
+    background-size: 20% 100%;
+    background: linear-gradient(transparent 50%, #ffbe3b 50%) no-repeat 0 100%;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+#recipe-info .recipe ul {
+    list-style: square;
+}
+
+#recipe-info .recipe ul li {
+    margin-bottom: 5px;
+    list-style-position: inside;
+}
+
+#recipe-info .recipe ul p {
+    font-weight: bold;
+    margin-left: 22px;
+}
+
+
+#cake-page .related {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    display: flex;
+}
+
+.section-title .line {
+    width: 100%;
+    margin-right: 50px;
+    border-bottom: 2px solid black;
+}
+
+.related .horizontal-gallery {
+    margin: 10px auto;
+    display: flex;
+
+    justify-content: space-around;
+
+}
+
+.related .horizontal-gallery div img {
+    width: 150px;
+    height: 120px;
+    object-fit: cover;
+
+}
+
+.related .stars {
+    display: flex;
+}
+/*edit cake*/
+
+.related .stars {
+    display: flex;
+}
+#edit-cake-btn{
+    cursor: pointer;
+}
+.edit-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.edit-btns-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+}
+#cake-name-input textarea{
+    font-family: 'mainFont', Calibri, sans-serif;
+    font-weight: bold;
+    font-size: 38px;
+}
+#cake-bakingTime-input input{
+    font-size: 30px;
+    width: 45px;
+}
+#cake-servings-input input{
+    font-size: 30px;
+    width: 65px;
+}
+#cake-difficulty-input select{
+    font-size: 30px;
+    text-align-last:center;
+}
+#cake-description-input textarea{
+    font-size: 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+#cake-ingredients-input textarea,
+#cake-recipe-input textarea{
+    font-family: 'mainFont', Calibri, sans-serif;
+    font-size: 16px;
+    background-color: transparent;
+}
+.edit-input{
+    display: none;
+}
+#cake-page .fa-edit{
+    color: #8aabf5;
+}
+#cake-page .fas.fa-window-close{
+    display: none;
+    color: #ee5252;
+}
+.edit-field-btn{
+    display: none;
+    cursor: pointer;
+}
+#cake-page .error{
+    font-size: 16px;
+
+}
+
+#cake-bakingTime-submit.fa-edit,
+#cake-difficulty-submit.fa-edit,
+#cake-servings-submit.fa-edit{
+    margin-left: 6px;
+}
+#cake-bakingTime-input input.error{
+    margin-left: 50px;
+}
+#cake-servings-input input.error{
+    margin-left: 45px;
+}
+#bakingTime-error,
+#servings-error{
+    float: right;
+}
+#comments-container{
+    margin: 20px 50px 50px 20px;
+}
+@media screen and (max-width: 950px) {
+    #cake-page #wrapper {
+        width: 600px;
+    }
+
+    #recipe-info .content {
+        /*width: 450px;*/
+    }
+
+    #recipe-info {
+        flex-direction: column-reverse;
+    }
+
+    #recipe-info .side {
+        flex-direction: row;
+        height: 200px;
+        width: 100%;
+    }
+    #recipe-info .content a {
+        margin-left: 50%;
+
+    }
+    .related .horizontal-gallery div img {
+        width: 120px;
+        height: 90px;
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+
+    #recipe-info .side{
+        margin-top: 20px;
+    }
+    #recipe-info .side > section > div {
+        width: 110px;
+        height: 110px;
+    }
+    #main-image,#recipe-info .details a {
+        display: none;
+    }
+    .recipe{
+        margin: 50px;
+    }
+
+}
+
+
+@media screen and (max-width: 650px) {
+    #cake-page #wrapper {
+        width: 100vw;
+    }
+
+    #recipe-info {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 50px;
+
+    }
+
+    #recipe-info {
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        margin-bottom: 50px;
+
+    }
+
+    #recipe-info .content {
+        width: auto;
+    }
+
+    #recipe-info .title {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    #recipe-info .content .user-name {
+        display: flex;
+        margin-top: 16px;
+        margin-left: 15px;
+    }
+
+    #title-image {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+
+    }
+
+    #cake-page .title h1 {
+        font-size: 38px;
+        margin-left: 10px;
+    }
+
+    #recipe-info .stars {
+        position: relative;
+        top: -25px;
+        right: 0;
+        left: 78%;
+        display: flex;
+    }
+
+    #recipe-info .details {
+        margin-top: 40px;
+        margin-left: 10px;
+
+    }
+
+    #recipe-info .side {
+        margin: 50px auto;
+        width: 70%;
+
+    }
+
+    #recipe-info .side > section > div {
+        width: 60px;
+        height: 60px;
+    }
+
+    #recipe-info .side p {
+        font-size: 20px;
+    }
+
+    .related {
+        margin-bottom: 10px;
+    }
+
+    .section-title {
+        font-size: 12px;
+        margin-left: 25px;
+    }
+
+    .related .horizontal-gallery div img {
+        width: 90px;
+        height: 60px;
+    }
+
+    .horizontal-gallery div div.stars {
+        width: 100px;
+        height: 60px;
+    }
+
+
+}
+
+/*
+*
+* **********************************************___Cake maker page style___**********************************************
+*
+*/
+
+#cake-maker-page main {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#cake-maker-page .form-header {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#cake-maker-page .form-header h1 {
+
+    margin-bottom: 10px;
+}
+
+#cake-maker-form {
+    margin-top: 20px;
+
+    width: 100%;
+}
+
+#cake-maker-form h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+
+}
+
+#questions2 label {
+    font-size: 20px;
+}
+
+#cake-maker-page input[type=text] {
+    width: 120px;
+}
+
+#cake-maker-page form b {
+    margin-left: 15px;
+}
+
+#cake-maker-page form .questions input {
+    margin-right: 15px;
+}
+
+#cake-maker-page form .questions article {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#cake-maker-page .hide_section {
+    display: none;
+}
+
+.questions article {
+    margin-bottom: 35px;
+}
+
+#questions3 img {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    z-index: 3;
+}
+
+
+#questions3 .image-picker-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 100px;
+    padding-left: 100px;
+    justify-content: space-between;
+}
+
+#questions3 h3 {
+    text-align: center;
+    margin-bottom: 35px;
+    margin-right: 45px;
+}
+
+#questions3 .picker-item {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#questions3 .picker-item h4 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#questions3 img:hover {
+    border: 3px solid #f1c7c7;
+    cursor: pointer;
+}
+#questions3 img.selected{
+    border: 3px solid #f54b4b;
+}
+
+#cake-maker-page .navigation {
+    /*position: absolute;*/
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    /*z-index: 1;*/
+
+}
+
+#cake-maker-page .navigation button {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 25px;
+    color: #ff9696;
+
+}
+
+#cake-maker-page .navigation button:hover {
+
+    color: #f36a6a;
+
+}
+
+
+#cake-maker-page .navigation button i {
+    margin: 30px;
+}
+
+#cake-maker-page .navigation button:hover {
+    cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+    #cake-maker-page ul.progressbar{
+        width: 200px;
+    }
+    #cake-maker-page #wrapper{
+        width: 700px;
+    }
+    #cake-maker-page #cake-maker-form  {
+        width: 80%;
+    }
+}
+
+
+
+
+/*
+*
+* **********************************************___Baking page style___**********************************************
+*
+*/
+
+#baking-page main{
+    display: flex;
+
+}
+
+.object-details{
+    margin-top: 25px;
+    width: 50%;
+
+}
+.object-details img{
+    width: 400px;
+    height:550px;
+    object-fit: cover;
+}
+
+.link-list{
+    margin-left: 30px;
+    margin-top: 50px;
+
+
+}
+.link-list a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border: 1px solid #f1c7c7;
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.5);
+    background-color: #FDEFEF;
+    padding: 20px;
+}
+
+.link-list a section{
+    text-align: center;
+    justify-self: center;
+    margin-right: 5px;
+}
+
+
+.link-list a:hover{
+
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.2);
+
+}
+
+
+.link-list a h2{
+    color: black;
+    /*width: 100%;*/
+    /*text-align: center;*/
+}
+.link-list a p{
+
+    color: black;
+
+}
+.link-list a i{
+    color: #fd8d8d;
+}
+
+
+@media screen and (max-width: 930px) {
+    #baking-page #wrapper{
+        width: 700px;
+    }
+    #baking-page main{
+        display: flex;
+        flex-direction: column;
+    }
+    .object-details h1{
+        margin-top: 7px;
+        font-size: 30px;
+        text-align: center;
+
+    }
+    .object-details{
+
+        width: 100%;
+
+    }
+    .object-details img{
+        width: 100%;
+        height:550px;
+        /*object-fit: cover;*/
+    }
+
+
+    .link-list{
+        margin-left: 0;
+        margin-top: 50px;
+        width: 100%;
+
+    }
+    .link-list a{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+
+        padding: 0;
+    }
+
+    .link-list a section{
+        text-align: center;
+        justify-self: center;
+        margin-right: 0;
+    }
+    .link-list a i{
+        position: absolute;
+        left: 15%;
+    }
+
+}
+@media screen and (max-width: 930px) {
+    #baking-page #wrapper{
+        width: 700px;
+    }
+
+    .link-list{
+        margin: 50px auto;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 700px) {
+    #baking-page #wrapper{
+        width: 500px;
+    }
+
+
+
+    .link-list{
+        margin: 50px auto;
+        width: 80%;
+
+    }
+
+
+}
+
+
+/*
+*
+* **********************************************___Auth page style___**********************************************
+*
+*/
+
+#auth-page main {
+    background-image: url("../images/cake-drawer.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#auth-page h2 {
+    align-self: center;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+#auth-page .error {
+    font-size: 13px;
+    margin-left: 100px;
+    color: #ee5252;
+
+}
+
+#login-form-container {
+    width: 50%;
+    padding: 10px;
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.8);
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#auth-page form {
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 480px;
+
+}
+
+#signup-form {
+    display: none;
+}
+
+#login-form {
+    display: flex;
+}
+
+#auth-page label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#auth-page input[type=password],#auth-page  input[type=text] {
+    flex-grow: 2;
+    width: 40%;
+    font-size: 17px;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+#auth-page input[type=password]:focus,#auth-page input[type=text]:focus{
+    outline: none;
+}
+
+#auth-page .input-group {
+    display: flex;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+#auth-page input[type=submit] {
+    border: 1px solid #F2DEDE;
+    /*margin: 15px;*/
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 18px;
+    color: #40a340;
+    background-color: #ffffff;
+    width: 30%;
+    margin: 15px auto;
+}
+
+#auth-page input[type=submit]:hover {
+    cursor: pointer;
+    border: 1px solid #f3bcbc;
+    color: #297429;
+}
+
+#switch-login-btn {
+    margin: 10px;
+    font-weight: bold;
+    width: 30%;
+    align-self: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #229922;
+}
+
+#auth-page h2 {
+    text-decoration: underline;
+}
+#auth-page .preferences{
+    display: flex;
+    margin-bottom: 3px;
+    width: 100%;
+    justify-content: space-around;
+}
+#auth-page .preferences-group{
+
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+#auth-page .preferences-group h3{
+    margin-bottom: 3px;
+    text-decoration: underline;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+@media screen and (max-width: 950px) {
+    #auth-page #wrapper {
+        width: 600px;
+    }
+    #login-form-container {
+        width: 80%;
+
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #auth-page #wrapper {
+        width: 500px;
+    }
+    #auth-page label {
+        font-size: 14px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 520px) {
+    #auth-page #wrapper {
+        width: 350px;
+    }
+
+}
+
+
+/*
+*
+* **********************************************___Error pages style___**********************************************
+*
+*/
+
+.mainbox {
+    margin: 100px auto;
+    /*height: 600px;*/
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    display: flex;
+    flex-direction: column;
+
+}
+.error-container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+}
+#error-page h2.err{
+    font-family: 'mainFont', Calibri, sans-serif;
+    font-weight: bold;
+}
+#error-page .err {
+    color: #3d3535;
+    font-size: 100px;
+    margin: 20px;
+}
+#error-page .msg {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+#error-page a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #f624f2;
+}
+#error-page footer a{
+    color: black;
+}
+#error-page footer a:hover{
+    font-weight: bold;
+}
+#error-page footer{
+    position: absolute;
+    bottom: 0;
+}
+.error-page a:hover,
+.construction a:hover{
+    text-decoration: underline;
+}
+
+.construction .mainbox{
+    background-image: url("../../public/images/construction-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.construction .error-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+#error-page .construction h2.err{
+    font-family: 'mainFont', Calibri, sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
+}
+#error-page .construction .err {
+    color: #3d3535;
+    font-size: 50px;
+    margin: 10px;
+}
+#error-page .construction .fas {
+
+    margin: 10px;
+}
+#error-page .construction .msg {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.7);
+}
+#error-page .construction a {
+
+    color: #f624bb;
+}
+@media screen and (max-width: 880px) {
+    .construction .mainbox{
+        width: 70%;
+        left: 15%;
+        right: 15%;
+
+    }
+
+}
+@media screen and (max-width: 630px) {
+    .construction .mainbox{
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+
+
+    #error-page .construction .err {
+        font-size: 30px;
+        margin: 8px;
+    }
+
+    #error-page .construction .msg {
+
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #error-page .err {
+        color: #3d3535;
+        font-size: 70px;
+    }
+    #error-page .fr{
+        font-size: 50px;
+    }
+    #error-page .msg {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+
